@@ -32,6 +32,7 @@ function App() {
     listAll(imagesListRef)
       .then((response) => {
         const fetchUrls = response.items.map((item) =>
+          
           getDownloadURL(item)
         );
         Promise.all(fetchUrls).then((urls) => {
@@ -52,9 +53,11 @@ function App() {
         }}
       />
       <button onClick={uploadFile}>Upload Image</button>
+      <div className="w-20">
       {imageUrls.map((url, index) => (
         <img key={index} src={url} alt={`uploaded-${index}`} />
       ))}
+      </div>
     </div>
   );
 }
