@@ -53,7 +53,7 @@ function App() {
         }}
       />
       <button onClick={uploadFile}>Upload Image</button>
-      <div className="w-20">
+      <div className="w-20 gap-10 mt-10 flex ">
       {imageUrls.map((url, index) => (
         <img key={index} src={url} alt={`uploaded-${index}`} />
       ))}
